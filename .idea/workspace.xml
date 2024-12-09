@@ -9,36 +9,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="14bd10b4-26af-4a8a-8cc4-106aabe23b94" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/Cookbook.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/appInsightsSettings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/deploymentTargetSelector.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/kotlinc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/migrations.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication2/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication2/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication2/.idea/codeStyles/Project.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication2/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication2/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication2/.idea/deploymentTargetSelector.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication2/.idea/gradle.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication2/.idea/kotlinc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication2/.idea/migrations.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication2/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication2/.idea/runConfigurations.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication2/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication2/app/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/MyApplication2/app/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication2/app/src/main/java/com/example/myapplication/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/MyApplication2/app/src/main/java/com/example/myapplication/MainActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication2/app/src/main/java/com/example/myapplication/ui/theme/RecipeScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/MyApplication2/app/src/main/java/com/example/myapplication/ui/RecipeScreen.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApplication2/app/src/main/java/com/example/myapplication/ui/theme/Theme.kt" beforeDir="false" afterPath="$PROJECT_DIR$/MyApplication2/app/src/main/java/com/example/myapplication/ui/theme/Theme.kt" afterDir="false" />
-    </list>
+    <list default="true" id="14bd10b4-26af-4a8a-8cc4-106aabe23b94" name="Changes" comment="LV2 - unfinished" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -193,6 +164,19 @@
       <option name="presentableId" value="Default" />
       <updated>1733468841755</updated>
     </task>
+    <task id="LOCAL-00001" summary="LV2 - unfinished">
+      <option name="closed" value="true" />
+      <created>1733773177524</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1733773177525</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="LV2 - unfinished" />
+    <option name="LAST_COMMIT_MESSAGE" value="LV2 - unfinished" />
   </component>
 </project>
