@@ -1,4 +1,6 @@
-@file:OptIn(ExperimentalMaterial3Api::class, ExperimentalMaterial3Api::class)
+@file:OptIn(ExperimentalMaterial3Api::class, ExperimentalMaterial3Api::class,
+    ExperimentalMaterial3Api::class
+)
 
 package com.example.myapplication.ui.theme
 
@@ -21,8 +23,10 @@ import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonColors
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
@@ -51,44 +55,64 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import com.example.myapplication.R
 import com.example.myapplication.Recipe
+import com.example.myapplication.ui.RecipeCard
 import org.intellij.lang.annotations.JdkConstants.HorizontalAlignment
 
-@Preview (showBackground = true)
 @Composable
-fun RecipeScreen () {
+fun RecipeScreen (
+    navigation: NavController
+
+) {
     Column (
         verticalArrangement = Arrangement.Top,
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier.fillMaxSize()
-    ){
+    ) {
         ScreenTitle(
             title = "What would you like to cook today?",
             subtitle = "Good morning, Marin^2"
         )
-        SearchBar(R.drawable.ic_search, "Search")
+        SearchBar(iconResource = R.drawable.ic_search, "Search")
         RecipeCategories()
         Row (
+            horizontalArrangement = Arrangement.SpaceBetween,
             modifier = Modifier
-                .offset(-130.dp),
-            horizontalArrangement = Arrangement.Start,
-            verticalAlignment = Alignment.CenterVertically
-
-        ){
-
+                .fillMaxWidth()
+                .padding(16.dp)
+            ){
                 Text(
                     text = "7 recipes",
                     fontSize = 18.sp)
             Image(modifier = Modifier
-                .offset(250.dp)
                 .size(20.dp),
                 painter = painterResource(R.drawable.ic_flame),
-                contentDescription = "Nešto",
+                contentDescription = null
             )
         }
-        RecipeCard(R.drawable.strawberry_pie_1, "Strawberry cake")
-
+        LazyRow(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(10.dp),
+            horizontalArrangement = Arrangement.spacedBy(4.dp)
+        ){
+            items(3) { index ->
+                Box(
+                    contentAlignment = Alignment.Center
+                )
+                {
+                    RecipeCard(
+                        R.drawable.strawberry_pie_1, "Strawberry cake",
+                        navigation = navigation,
+                        recipeId = 1
+                    )
+                }
+            }
+        }
+        Spacer(modifier = Modifier
+            .padding(0.dp, 20.dp))
         IconButton(R.drawable.ic_plus, "Add new recipe")
     }
 }
@@ -126,6 +150,7 @@ fun ScreenTitle(
 
 
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun SearchBar(
     @DrawableRes iconResource: Int,
@@ -201,23 +226,44 @@ fun RecipeCategories() {
 @Composable
 fun IconButton(
     @DrawableRes iconResource: Int,
-    text: String
+    text: String,
+    colors: ButtonColors = ButtonDefaults.buttonColors(containerColor =
+    Pink),
+    side: Int = 0
 ) {
     Button(
         onClick = { /*TODO*/ },
-        colors = ButtonDefaults.buttonColors(containerColor = Pink),
+        colors = colors,
     ) {
         Row {
-            Icon(
-                painter = painterResource(id = iconResource),
-                contentDescription = text
-            )
-            Spacer(Modifier.width(2.dp))
-            Text( text = text,
-                style = TextStyle(
-                    fontSize = 16.sp, fontWeight = FontWeight.Light
+            if (side == 0) {
+                Icon(
+                    painter = painterResource(id = iconResource),
+                    contentDescription = text
                 )
-            )
+                Spacer(Modifier.width(2.dp))
+                Text(
+                    text = text,
+                    style = TextStyle(
+                        fontSize = 16.sp,
+                        fontWeight = FontWeight.Light
+                    )
+                )
+            }
+            else {
+                Text(
+                    text = text,
+                    style = TextStyle(
+                        fontSize = 16.sp,
+                        fontWeight = FontWeight.Light
+                    )
+                )
+                Spacer(Modifier.width(2.dp))
+                Icon(
+                    painter = painterResource(id = iconResource),
+                    contentDescription = text
+                )
+            }
         }
     }
 }
@@ -244,37 +290,5 @@ fun Chip(
     }
 }
 
-@Composable
-fun RecipeCard(
-    @DrawableRes imageResource: Int,
-    title: String
-) {
-    Row() {
-        Box() {
-            Image(
-                painter = painterResource(imageResource),
-                contentDescription = title,
-                modifier = Modifier
-//                    .fillMaxSize()
-                    .clip(RoundedCornerShape(30))
-            )
-            Row (
-                verticalAlignment = Alignment.Bottom
-            ){
-            Chip("30 min")
-            Chip("4 ingredients")
-        }
-        }
-       Image(
-                painter = painterResource(imageResource),
-                contentDescription = title,
-                modifier = Modifier
 
-//                    .fillMaxSize()
-                    .clip(RoundedCornerShape(30))
-
-            )
-
-    }
-}
 

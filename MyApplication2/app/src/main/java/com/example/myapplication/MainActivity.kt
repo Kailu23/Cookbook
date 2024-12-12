@@ -5,6 +5,8 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.annotation.DrawableRes
+import com.example.myapplication.ui.NavigationController
+import com.example.myapplication.ui.RecipeDetailsScreen
 import com.example.myapplication.ui.theme.MyApplicationTheme
 import com.example.myapplication.ui.theme.RecipeScreen
 
@@ -64,14 +66,14 @@ class MainActivity : ComponentActivity() {
                             )
                         )
                 )
-            RecipeScreen()
+            NavigationController()
             }
         }
     }
 }
 
 data class Recipe(
-    @DrawableRes private val image: Int,
+    @DrawableRes val image: Int,
     var title: String,
     var category: String,
     var cookingTime: String,
@@ -82,7 +84,7 @@ data class Recipe(
     var ingredients: List<Ingredient>,
 )
 data class Ingredient(
-    @DrawableRes private val image: Int,
+    @DrawableRes val image: Int,
     var title: String,
     var subtitle: String
 )
